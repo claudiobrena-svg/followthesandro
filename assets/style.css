@@ -367,3 +367,30 @@ a.carrello { display: inline-block; }
 .form-checkout input:not([type=radio]):not([type=checkbox]), .form-checkout select, .form-checkout textarea { width: 100%; min-width: 0; }
 .opzione input, .spunta input { width: auto; flex: none; }
 .prodotto button:disabled { opacity: .5; cursor: default; background: transparent; color: var(--legno); }
+
+/* ===== Scheda opera ===== */
+.prodotto a.img { display: block; }
+.prodotto h3 a { text-decoration: none; }
+.prodotto h3 a:hover { color: var(--verde); }
+.torna { display: inline-block; margin-bottom: 24px; color: var(--legno); text-decoration: none; }
+.torna:hover { color: var(--scuro); }
+.scheda { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.foto-grande { aspect-ratio: 1; border-radius: var(--radius); overflow: hidden; background: #fff; border: 1px solid var(--bordo); }
+.foto-grande img, .foto-grande svg { width: 100%; height: 100%; object-fit: cover; }
+.miniature { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); gap: 10px; margin-top: 12px; }
+.miniature button { aspect-ratio: 1; padding: 0; border: 2px solid transparent; border-radius: 10px; overflow: hidden; cursor: pointer; background: none; }
+.miniature button.attiva { border-color: var(--verde); }
+.miniature img { width: 100%; height: 100%; object-fit: cover; }
+.dettagli { display: grid; gap: 14px; position: sticky; top: 100px; }
+.dettagli .cat { font-size: .8rem; text-transform: uppercase; letter-spacing: .14em; color: var(--verde); font-weight: 700; }
+.dettagli h1 { font-family: var(--font-titoli); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; color: var(--scuro); }
+.prezzo-grande { font-size: 1.6rem; font-weight: 700; }
+.dettagli .btn { justify-self: start; }
+.dettagli .btn:disabled { opacity: .5; cursor: default; }
+.descrizione { border-top: 1px solid var(--bordo); padding-top: 14px; display: grid; gap: 10px; }
+.descrizione h2 { font-family: var(--font-titoli); font-size: 1.15rem; }
+@media (max-width: 820px) {
+  .scheda { grid-template-columns: 1fr; gap: 28px; }
+  .dettagli { position: static; }
+  .dettagli .btn { justify-self: stretch; text-align: center; }
+}

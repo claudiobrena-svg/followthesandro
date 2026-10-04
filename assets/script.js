@@ -26,6 +26,15 @@ const TESTI = {
   it: { aggiungi: "Aggiungi", aggiunto: (n) => `${n} aggiunto al carrello`, carrello: (q, t) => `Carrello: ${q} articoli, ${t} (pagamento non ancora attivo)`, vuoto: "Il carrello è vuoto", gia: "È già nel carrello: ogni pezzo è unico", venduto: "Venduto", grazie: "Grazie! Messaggio ricevuto (dimostrazione: l'invio reale verrà collegato più avanti)." },
 }[LINGUA];
 const nomeDi = (p) => p.nome[LINGUA] || p.nome.en;
+const PAGINA_SCHEDA = { en: "artwork.html", es: "obra.html", it: "opera.html" }[LINGUA];
+const linkScheda = (p) => `${PAGINA_SCHEDA}?id=${p.id}`;
+const TESTI_SCHEDA = {
+  en: { misure: "Size", descrizione: "Description", torna: "Back to the shop", nota: "Shipping and taxes are calculated at checkout.", nonTrovata: "This work does not exist or is no longer available.", unico: "One of a kind: handmade on reclaimed Fuerteventura wood.", foto: "Photo" },
+  es: { misure: "Medidas", descrizione: "Descripción", torna: "Volver a la tienda", nota: "Envío e impuestos se calculan en el pago.", nonTrovata: "Esta obra no existe o ya no está disponible.", unico: "Pieza única: hecha a mano sobre madera recuperada de Fuerteventura.", foto: "Foto" },
+  it: { misure: "Misure", descrizione: "Descrizione", torna: "Torna al negozio", nota: "Spedizione e tasse vengono calcolate al checkout.", nonTrovata: "Quest'opera non esiste o non è più disponibile.", unico: "Pezzo unico: fatto a mano su legno recuperato di Fuerteventura.", foto: "Foto" },
+}[LINGUA];
+const testoDi = (campo) => (campo && (campo[LINGUA] || campo.en)) || "";
+const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const attr = (t) => String(t).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
 /* ===== Segnaposto in stile string art: tavola di legno, chiodi e filo ===== */
@@ -90,10 +99,10 @@ const euro = (n) => n.toLocaleString(LOCALE, { style: "currency", currency: "EUR
 
 function schedaProdotto(p) {
   return `<article class="prodotto">
-    <div class="img">${p.foto ? `<img src="${urlFoto(p.foto)}" alt="${attr(nomeDi(p))}" loading="lazy">` : illustrazione({ ...p, nome: nomeDi(p) })}</div>
+    <a class="img" href="${linkScheda(p)}">${p.foto ? `<img src="${urlFoto(p.foto)}" alt="${attr(nomeDi(p))}" loading="lazy">` : illustrazione({ ...p, nome: nomeDi(p) })}</a>
     <div class="info">
       <span class="cat">${CATEGORIE[p.cat][LINGUA]}</span>
-      <h3>${nomeDi(p)}</h3>
+      <h3><a href="${linkScheda(p)}">${nomeDi(p)}</a></h3>
       <div class="riga">
         <span class="prezzo">${euro(p.prezzo)}</span>
         ${p.venduto ? `<button type="button" disabled>${TESTI.venduto}</button>` : `<button type="button" data-aggiungi="${p.id}">${TESTI.aggiungi}</button>`}
@@ -101,6 +110,49 @@ function schedaProdotto(p) {
     </div>
   </article>`;
 }
+
+/* ===== Pagina scheda opera (opera.html?id=N) ===== */
+function mostraScheda(el) {
+  const p = PRODOTTI.find((x) => x.id === Number(new URLSearchParams(location.search).get("id")));
+  if (!p) {
+    el.innerHTML = `<div class="carrello-vuoto"><p>${TESTI_SCHEDA.nonTrovata}</p><a class="btn" href="${el.dataset.negozio}">${TESTI_SCHEDA.torna}</a></div>`;
+    return;
+  }
+  const nome = nomeDi(p);
+  document.title = `${nome} · followthesandro`;
+  document.querySelectorAll(".lingue a").forEach((l) => { l.href = l.href.split("?")[0] + location.search; });
+  const foto = [p.foto, ...(p.galleria || [])].filter(Boolean);
+  const principale = foto.length ? `<img src="${urlFoto(foto[0])}" alt="${attr(nome)}">` : illustrazione({ ...p, nome });
+  const miniature = foto.length > 1
+    ? `<div class="miniature">${foto.map((f, i) => `<button type="button" data-foto="${attr(urlFoto(f))}" class="${i ? "" : "attiva"}" aria-label="${TESTI_SCHEDA.foto} ${i + 1}"><img src="${urlFoto(f)}" alt="" loading="lazy"></button>`).join("")}</div>`
+    : "";
+  const descrizione = testoDi(p.descrizione);
+  el.innerHTML = `<a class="torna" href="${el.dataset.negozio}">← ${TESTI_SCHEDA.torna}</a>
+  <div class="scheda">
+    <div class="galleria">
+      <div class="foto-grande">${principale}</div>
+      ${miniature}
+    </div>
+    <div class="dettagli">
+      <span class="cat">${CATEGORIE[p.cat][LINGUA]}</span>
+      <h1>${esc(nome)}</h1>
+      <p class="prezzo-grande">${euro(p.prezzo)}</p>
+      ${p.venduto ? `<button class="btn" type="button" disabled>${TESTI.venduto}</button>` : `<button class="btn" type="button" data-aggiungi="${p.id}">${TESTI.aggiungi}</button>`}
+      <p class="nota">${TESTI_SCHEDA.nota}</p>
+      ${p.misure ? `<p><strong>${TESTI_SCHEDA.misure}:</strong> ${esc(p.misure)}</p>` : ""}
+      ${descrizione ? `<div class="descrizione"><h2>${TESTI_SCHEDA.descrizione}</h2>${descrizione.split(/\n\s*\n/).map((par) => `<p>${esc(par).replace(/\n/g, "<br>")}</p>`).join("")}</div>` : ""}
+      <p class="nota">${TESTI_SCHEDA.unico}</p>
+    </div>
+  </div>`;
+}
+
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("[data-foto]");
+  if (!b) return;
+  const grande = document.querySelector(".foto-grande");
+  grande.innerHTML = `<img src="${b.dataset.foto}" alt="">`;
+  document.querySelectorAll("[data-foto]").forEach((x) => x.classList.toggle("attiva", x === b));
+});
 
 function mostraProdotti(contenitore, elenco) {
   if (contenitore) contenitore.innerHTML = elenco.map(schedaProdotto).join("");
@@ -160,6 +212,8 @@ function animaNumeri() {
 /* ===== Avvio pagina ===== */
 document.addEventListener("DOMContentLoaded", async () => {
   await CARICA_PRODOTTI;
+  const scheda = document.getElementById("scheda-opera");
+  if (scheda) mostraScheda(scheda);
   mostraProdotti(document.getElementById("ultima-collezione"), PRODOTTI.filter((p) => p.nuovo).slice(0, 4));
   mostraProdotti(document.getElementById("piu-popolari"), PRODOTTI.filter((p) => p.popolare).slice(0, 8));
 

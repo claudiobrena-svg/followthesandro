@@ -50,7 +50,24 @@ collections:
                   - { label: "Idee regalo", value: regali }
               - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
               - { name: peso, label: "Peso imballata (kg)", widget: number, value_type: float, min: 0, step: 0.1, hint: "Serve per calcolare la spedizione" }
-              - { name: foto, label: "Foto", widget: image, required: false, hint: "Trascina qui la foto (meglio quadrata, circa 1200×1200 px). Senza foto si vede un disegno segnaposto." }
+              - { name: foto, label: "Foto principale", widget: image, required: false, hint: "Trascina qui la foto (meglio quadrata, circa 1200×1200 px). È quella che si vede nel negozio. Senza foto si vede un disegno segnaposto." }
+              - name: galleria
+                label: "Altre foto (scheda opera)"
+                label_singular: foto
+                widget: list
+                required: false
+                hint: "Dettagli, retro, l'opera appesa… Si vedono nella pagina dell'opera."
+                field: { name: immagine, label: Foto, widget: image }
+              - { name: misure, label: "Misure (es. 40 × 60 cm)", required: false }
+              - name: descrizione
+                label: "Descrizione (pagina dell'opera)"
+                widget: object
+                required: false
+                hint: "Lascia una riga vuota per andare a capo con un nuovo paragrafo"
+                fields:
+                  - { name: en, label: "In inglese", widget: text, required: false }
+                  - { name: es, label: "In spagnolo", widget: text, required: false }
+                  - { name: it, label: "In italiano", widget: text, required: false }
               - { name: venduto, label: "Venduto", widget: boolean, default: false, hint: "Se attivo l'opera resta visibile ma non si può comprare" }
               - { name: nuovo, label: "In 'Ultime opere' in home", widget: boolean, default: false }
               - { name: popolare, label: "In 'Le opere preferite' in home", widget: boolean, default: false }

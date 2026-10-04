@@ -9,18 +9,18 @@ from pathlib import Path
 RADICE = Path(__file__).resolve().parent.parent
 LINGUE = ["en", "es", "it"]          # ordine di priorità
 CARTELLA = {"en": "", "es": "es/", "it": "it/"}
-PAGINE = ["index", "negozio", "chi-sono", "contatti", "carrello", "checkout"]
+PAGINE = ["index", "negozio", "chi-sono", "contatti", "carrello", "checkout", "opera"]
 # Nome del file di ogni pagina in ogni lingua
 FILE = {
-  "en": {"index": "index", "negozio": "shop", "chi-sono": "about", "contatti": "contact", "carrello": "cart", "checkout": "checkout"},
-  "es": {"index": "index", "negozio": "tienda", "chi-sono": "sobre-mi", "contatti": "contacto", "carrello": "carrito", "checkout": "pago"},
-  "it": {"index": "index", "negozio": "negozio", "chi-sono": "chi-sono", "contatti": "contatti", "carrello": "carrello", "checkout": "checkout"},
+  "en": {"index": "index", "negozio": "shop", "chi-sono": "about", "contatti": "contact", "carrello": "cart", "checkout": "checkout", "opera": "artwork"},
+  "es": {"index": "index", "negozio": "tienda", "chi-sono": "sobre-mi", "contatti": "contacto", "carrello": "carrito", "checkout": "pago", "opera": "obra"},
+  "it": {"index": "index", "negozio": "negozio", "chi-sono": "chi-sono", "contatti": "contatti", "carrello": "carrello", "checkout": "checkout", "opera": "opera"},
 }
 
 T = {
   "en": {
     "desc": "followthesandro: handmade string art on driftwood collected from the beaches of Fuerteventura.",
-    "titoli": {"index": "followthesandro · String art on Fuerteventura driftwood", "negozio": "Shop · followthesandro", "chi-sono": "About · followthesandro", "contatti": "Contact · followthesandro", "carrello": "Cart · followthesandro", "checkout": "Checkout · followthesandro"},
+    "titoli": {"index": "followthesandro · String art on Fuerteventura driftwood", "negozio": "Shop · followthesandro", "chi-sono": "About · followthesandro", "contatti": "Contact · followthesandro", "carrello": "Cart · followthesandro", "checkout": "Checkout · followthesandro", "opera": "Artwork · followthesandro"},
     "banner": "Every piece is one of a kind: Fuerteventura wood, nails and thread, all handmade",
     "nav": ["Wall art", "Small pieces", "Objects", "Gift ideas", "Custom", "About", "Contact"],
     "carrello": "Cart", "menu": "Open menu", "lingua": "Language",
@@ -69,7 +69,7 @@ T = {
   },
   "es": {
     "desc": "followthesandro: string art hecho a mano con madera recuperada en las playas de Fuerteventura.",
-    "titoli": {"index": "followthesandro · String art con madera de Fuerteventura", "negozio": "Tienda · followthesandro", "chi-sono": "Sobre mí · followthesandro", "contatti": "Contacto · followthesandro", "carrello": "Carrito · followthesandro", "checkout": "Pago · followthesandro"},
+    "titoli": {"index": "followthesandro · String art con madera de Fuerteventura", "negozio": "Tienda · followthesandro", "chi-sono": "Sobre mí · followthesandro", "contatti": "Contacto · followthesandro", "carrello": "Carrito · followthesandro", "checkout": "Pago · followthesandro", "opera": "Obra · followthesandro"},
     "banner": "Cada pieza es única: madera de Fuerteventura, clavos e hilo, todo hecho a mano",
     "nav": ["Cuadros", "Formatos pequeños", "Objetos", "Ideas de regalo", "A medida", "Sobre mí", "Contacto"],
     "carrello": "Carrito", "menu": "Abrir menú", "lingua": "Idioma",
@@ -118,7 +118,7 @@ T = {
   },
   "it": {
     "desc": "followthesandro: string art fatta a mano con legno recuperato sulle spiagge di Fuerteventura.",
-    "titoli": {"index": "followthesandro · String art con legno di Fuerteventura", "negozio": "Negozio · followthesandro", "chi-sono": "Chi sono · followthesandro", "contatti": "Contatti · followthesandro", "carrello": "Carrello · followthesandro", "checkout": "Checkout · followthesandro"},
+    "titoli": {"index": "followthesandro · String art con legno di Fuerteventura", "negozio": "Negozio · followthesandro", "chi-sono": "Chi sono · followthesandro", "contatti": "Contatti · followthesandro", "carrello": "Carrello · followthesandro", "checkout": "Checkout · followthesandro", "opera": "Opera · followthesandro"},
     "banner": "Ogni pezzo è unico: legno di Fuerteventura, chiodi e filo, tutto fatto a mano",
     "nav": ["Quadri", "Piccoli formati", "Oggetti", "Idee regalo", "Su misura", "Chi sono", "Contatti"],
     "carrello": "Carrello", "menu": "Apri menu", "lingua": "Lingua",
@@ -545,8 +545,16 @@ def corpo_checkout(b):
 """
 
 
+def corpo_opera(b):
+    return """
+<section>
+  <div class="container" id="scheda-opera" data-negozio="negozio.html"></div>
+</section>
+"""
+
+
 CORPI = {"index": corpo_index, "negozio": corpo_negozio, "chi-sono": corpo_chi_sono, "contatti": corpo_contatti,
-         "carrello": corpo_carrello, "checkout": corpo_checkout}
+         "carrello": corpo_carrello, "checkout": corpo_checkout, "opera": corpo_opera}
 
 for l in LINGUE:
     b = T[l]
