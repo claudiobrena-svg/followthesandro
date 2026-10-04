@@ -104,10 +104,17 @@ function zonaDi(paese, cap) {
   return SPEDIZIONE.zonaPaese[paese] || "mondo";
 }
 
+/* Come Correos: si paga il maggiore tra peso reale e peso volumetrico (L × A × P in cm ÷ 6000) */
+function pesoTassabile(p) {
+  const m = p.pacco || {};
+  const volumetrico = (Number(m.lunghezza) || 0) * (Number(m.larghezza) || 0) * (Number(m.altezza) || 0) / 6000;
+  return Math.max(Number(p.peso) || 1, volumetrico);
+}
+
 function prezzoSpedizione({ tariffe, kgExtra }, kg) {
   for (const [max, prezzo] of tariffe) if (kg <= max) return prezzo;
   const [max, prezzo] = tariffe[tariffe.length - 1];
-  return prezzo + Math.ceil(kg - max) * kgExtra;
+  return Math.round((prezzo + Math.ceil(kg - max) * kgExtra) * 100) / 100;
 }
 
 function articoliCarrello() {
@@ -119,7 +126,7 @@ function calcola(articoli, paese, cap, servizio) {
   const r = { subtotale, spedizione: null, tasse: 0, etichettaTasse: "", nota: "", opzioni: [] };
   if (!paese) return { ...r, totale: subtotale };
   const zona = zonaDi(paese, cap);
-  const kg = articoli.reduce((s, p) => s + (p.peso || 1), 0) + SPEDIZIONE.imballoKg;
+  const kg = articoli.reduce((s, p) => s + pesoTassabile(p), 0) + SPEDIZIONE.imballoKg;
   r.opzioni = ["standard", "express"].map((tipo) => {
     const z = SPEDIZIONE.zone[zona] && SPEDIZIONE.zone[zona][tipo];
     if (!z || !z.tariffe.length) return null;

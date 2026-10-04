@@ -56,7 +56,16 @@ collections:
                   - { label: "Oggetti", value: oggetti }
                   - { label: "Idee regalo", value: regali }
               - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-              - { name: peso, label: "Peso imballata (kg)", widget: number, value_type: float, min: 0, step: 0.1, hint: "Serve per calcolare la spedizione" }
+              - { name: peso, label: "Peso del pacco pronto (kg)", widget: number, value_type: float, min: 0, step: 0.1, hint: "Pesa l'opera già imballata. Il sito confronta questo peso con il peso volumetrico del pacco e usa il più alto, come fa Correos." }
+              - name: pacco
+                label: "Misure del pacco pronto (cm)"
+                widget: object
+                required: false
+                hint: "Lunghezza × larghezza × altezza del pacco imballato. Servono per il peso volumetrico (L×A×P ÷ 6000)."
+                fields:
+                  - { name: lunghezza, label: "Lunghezza (cm)", widget: number, value_type: float, min: 0, required: false }
+                  - { name: larghezza, label: "Larghezza (cm)", widget: number, value_type: float, min: 0, required: false }
+                  - { name: altezza, label: "Altezza / spessore (cm)", widget: number, value_type: float, min: 0, required: false }
               - { name: foto, label: "Foto principale", widget: image, required: false, hint: "Trascina qui la foto (meglio quadrata, circa 1200×1200 px). È quella che si vede nel negozio. Senza foto si vede un disegno segnaposto." }
               - name: galleria
                 label: "Altre foto (scheda opera)"
