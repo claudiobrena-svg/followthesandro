@@ -7,20 +7,23 @@
    ===================================================================== */
 
 /* ----- Spedizione -----
-   Ogni zona ha due servizi; ogni tariffa è [peso massimo in kg, prezzo in €].
-   Oltre l'ultima fascia si aggiunge "kgExtra" € per ogni kg in più.
-   Il peso di ogni opera è il campo "peso" in script.js; "imballoKg" si aggiunge una volta per ordine. */
-const SPEDIZIONE = {
-  imballoKg: 0.5,
-  gratisDa: 0,            // es. 300 = spedizione standard gratis sopra 300 € (0 = mai)
-  zone: {
-    canarie: { standard: { tariffe: [[1, 6], [3, 9], [10, 15]], kgExtra: 1.5, giorni: "2-4" }, express: { tariffe: [[1, 12], [3, 16], [10, 25]], kgExtra: 2, giorni: "1-2" } },
-    spagna:  { standard: { tariffe: [[1, 12], [3, 18], [10, 30]], kgExtra: 2.5, giorni: "4-7" }, express: { tariffe: [[1, 25], [3, 32], [10, 50]], kgExtra: 4, giorni: "2-3" } },
-    ue:      { standard: { tariffe: [[1, 18], [3, 26], [10, 45]], kgExtra: 3.5, giorni: "6-10" }, express: { tariffe: [[1, 35], [3, 45], [10, 75]], kgExtra: 6, giorni: "3-5" } },
-    europa:  { standard: { tariffe: [[1, 22], [3, 32], [10, 55]], kgExtra: 4, giorni: "7-12" }, express: { tariffe: [[1, 40], [3, 52], [10, 85]], kgExtra: 7, giorni: "3-5" } },
-    mondo:   { standard: { tariffe: [[1, 30], [3, 45], [10, 80]], kgExtra: 6, giorni: "10-20" }, express: { tariffe: [[1, 55], [3, 75], [10, 120]], kgExtra: 10, giorni: "4-7" } },
-  },
-};
+   Le tariffe si cambiano dal pannello /admin (file dati/spedizioni.json).
+   Ogni zona ha due servizi; ogni tariffa vale fino a un peso massimo (kg);
+   oltre l'ultima fascia si aggiunge "kg_extra" € per ogni kg in più. */
+let SPEDIZIONE = { imballoKg: 0.5, gratisDa: 0, zone: {} };
+const CARICA_SPEDIZIONI = fetch(BASE + "dati/spedizioni.json", { cache: "no-cache" })
+  .then((r) => r.json())
+  .then((d) => {
+    const servizio = (s = {}) => ({
+      tariffe: (s.tariffe || []).map((t) => [Number(t.fino_a_kg), Number(t.prezzo)]).sort((x, y) => x[0] - y[0]),
+      kgExtra: Number(s.kg_extra) || 0,
+      giorni: s.giorni || "",
+    });
+    const zone = {};
+    for (const [nome, z] of Object.entries(d.zone || {})) zone[nome] = { standard: servizio(z.standard), express: servizio(z.express) };
+    SPEDIZIONE = { imballoKg: Number(d.imballo_kg) || 0, gratisDa: Number(d.gratis_da) || 0, zone };
+  })
+  .catch(() => {});
 
 /* ----- Tasse (da far confermare al gestor) -----
    Fuerteventura è nelle Canarie, fuori dall'area IVA UE:
@@ -117,11 +120,13 @@ function calcola(articoli, paese, cap, servizio) {
   const zona = zonaDi(paese, cap);
   const kg = articoli.reduce((s, p) => s + (p.peso || 1), 0) + SPEDIZIONE.imballoKg;
   r.opzioni = ["standard", "express"].map((tipo) => {
-    const z = SPEDIZIONE.zone[zona][tipo];
+    const z = SPEDIZIONE.zone[zona] && SPEDIZIONE.zone[zona][tipo];
+    if (!z || !z.tariffe.length) return null;
     let prezzo = prezzoSpedizione(z, kg);
     if (tipo === "standard" && SPEDIZIONE.gratisDa && subtotale >= SPEDIZIONE.gratisDa) prezzo = 0;
     return { tipo, prezzo, giorni: z.giorni };
-  });
+  }).filter(Boolean);
+  if (!r.opzioni.length) return { ...r, totale: subtotale };
   const scelta = r.opzioni.find((o) => o.tipo === servizio) || r.opzioni[0];
   r.servizio = scelta.tipo;
   r.spedizione = scelta.prezzo;
@@ -213,7 +218,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await CARICA_PRODOTTI;
+  await Promise.all([CARICA_PRODOTTI, CARICA_SPEDIZIONI]);
   const c = document.getElementById("carrello-pagina");
   if (c) mostraCarrello(c);
   const f = document.getElementById("form-checkout");

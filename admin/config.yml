@@ -1,5 +1,5 @@
-# Pannello di gestione delle opere (Decap CMS)
-# In locale salva direttamente nei file grazie a "decap-server".
+# Pannello di gestione del sito (Decap CMS)
+# In locale salva direttamente nei file grazie a "decap-server" (AVVIA-SITO.bat).
 # Online: login con l'account GitHub (autorizzazione gestita da Netlify).
 backend:
   name: github
@@ -7,17 +7,24 @@ backend:
   branch: main
   commit_messages:
     update: "Pannello: aggiornate le {{collection}}"
-    uploadMedia: "Pannello: caricata la foto {{path}}"
-    deleteMedia: "Pannello: eliminata la foto {{path}}"
+    uploadMedia: "Pannello: caricato {{path}}"
+    deleteMedia: "Pannello: eliminato {{path}}"
 local_backend: true
 
 locale: it
 media_folder: assets/prodotti
 public_folder: /assets/prodotti
 
+# I testi sono nelle 3 lingue: inglese (principale), spagnolo, italiano
+i18n:
+  structure: single_file
+  locales: [en, es, it]
+  default_locale: en
+
 collections:
+  # ---------------------------------------------------------------- OPERE
   - name: negozio
-    label: Negozio
+    label: Opere
     editor:
       preview: false
     files:
@@ -84,3 +91,399 @@ collections:
                     options: [cerchio, cuore, stella, vulcano, onda, tavola, isola, van]
                   - { name: filo, label: "Colore filo (es. #3f6331)", required: false }
                   - { name: legno, label: "Colore legno (es. #c9a27a)", required: false }
+
+  # ---------------------------------------------------------------- TESTI
+  - name: testi
+    label: Testi del sito
+    i18n: true
+    editor:
+      preview: false
+    files:
+      - name: comuni
+        label: "Banner, menu e piè di pagina"
+        file: dati/testi/comuni.json
+        format: json
+        i18n: true
+        fields:
+          - { name: banner, label: "Banner in alto", i18n: true }
+          - { name: descrizione_sito, label: "Descrizione per Google (1-2 frasi)", widget: text, i18n: true }
+          - name: menu
+            label: Menu
+            widget: object
+            i18n: true
+            fields:
+              - { name: quadri, label: "Quadri", i18n: true }
+              - { name: mini, label: "Piccoli formati", i18n: true }
+              - { name: oggetti, label: "Oggetti", i18n: true }
+              - { name: regali, label: "Idee regalo", i18n: true }
+              - { name: su_misura, label: "Su misura", i18n: true }
+              - { name: chi_sono, label: "Chi sono", i18n: true }
+              - { name: contatti, label: "Contatti", i18n: true }
+          - name: footer
+            label: "Piè di pagina"
+            widget: object
+            i18n: true
+            fields:
+              - { name: testo, label: "Testo sotto il logo", widget: text, i18n: true }
+              - { name: titolo_opere, label: "Titolo colonna Opere", i18n: true }
+              - { name: titolo_assistenza, label: "Titolo colonna Assistenza", i18n: true }
+              - { name: spedizioni, label: "Link Spedizioni", i18n: true }
+              - { name: resi, label: "Link Resi e rimborsi", i18n: true }
+              - { name: cura_legno, label: "Link Cura del legno", i18n: true }
+              - { name: contatti, label: "Link Contatti", i18n: true }
+              - { name: titolo_altro, label: "Titolo colonna Altro", i18n: true }
+              - { name: diario, label: "Link Diario", i18n: true }
+              - { name: chi_sono, label: "Link Chi sono", i18n: true }
+              - { name: su_misura, label: "Link Opere su misura", i18n: true }
+              - { name: copyright, label: "Riga in fondo (©)", i18n: true }
+              - { name: termini, label: "Termini e condizioni", i18n: true }
+              - { name: privacy, label: "Privacy", i18n: true }
+              - { name: cookie, label: "Cookie", i18n: true }
+
+      - name: home
+        label: "Home"
+        file: dati/testi/home.json
+        format: json
+        i18n: true
+        fields:
+          - { name: titolo_pagina, label: "Titolo della scheda del browser", i18n: true }
+          - { name: hero_titolo, label: "Titolo grande (vai a capo per dividerlo in due righe)", widget: text, i18n: true }
+          - { name: hero_sottotitolo, label: "Riga sotto il titolo", i18n: true }
+          - { name: hero_pulsante_1, label: "Pulsante 1 (negozio)", i18n: true }
+          - { name: hero_pulsante_2, label: "Pulsante 2 (su misura)", i18n: true }
+          - { name: nuove_occhiello, label: "Ultime opere: scritta piccola", i18n: true }
+          - { name: nuove_titolo, label: "Ultime opere: titolo", i18n: true }
+          - { name: legno_occhiello, label: "Sezione legno: scritta piccola", i18n: true }
+          - { name: legno_titolo, label: "Sezione legno: titolo", i18n: true }
+          - { name: legno_testo, label: "Sezione legno: testo (riga vuota = nuovo paragrafo)", widget: text, i18n: true }
+          - { name: legno_pulsante, label: "Sezione legno: pulsante", i18n: true }
+          - { name: legno_foto, label: "Sezione legno: foto (uguale in tutte le lingue)", widget: image, required: false, i18n: duplicate, media_folder: /assets/foto, public_folder: /assets/foto }
+          - { name: processo_occhiello, label: "Processo: scritta piccola", i18n: true }
+          - { name: processo_titolo, label: "Processo: titolo", i18n: true }
+          - { name: processo_testo, label: "Processo: testo", i18n: true }
+          - name: passi
+            label: "Processo: passi"
+            label_singular: passo
+            widget: list
+            i18n: true
+            fields:
+              - { name: titolo, label: Titolo }
+              - { name: testo, label: Testo, widget: text }
+          - { name: numeri_occhiello, label: "Numeri: scritta piccola", i18n: true }
+          - { name: numeri_titolo, label: "Numeri: titolo", i18n: true }
+          - name: numeri
+            label: "Numeri"
+            label_singular: numero
+            widget: list
+            i18n: true
+            fields:
+              - { name: valore, label: "Numero (senza punti, es. 1000000)", widget: number, value_type: float }
+              - { name: suffisso, label: "Dopo il numero (es. +, %, m)", required: false }
+              - { name: etichetta, label: "Scritta sotto" }
+          - { name: preferite_occhiello, label: "Preferite: scritta piccola", i18n: true }
+          - { name: preferite_titolo, label: "Preferite: titolo", i18n: true }
+          - { name: misura_occhiello, label: "Su misura: scritta piccola", i18n: true }
+          - { name: misura_titolo, label: "Su misura: titolo", i18n: true }
+          - { name: misura_testo, label: "Su misura: testo", widget: text, i18n: true }
+          - { name: misura_pulsante, label: "Su misura: pulsante", i18n: true }
+          - { name: misura_foto, label: "Su misura: foto (uguale in tutte le lingue)", widget: image, required: false, i18n: duplicate, media_folder: /assets/foto, public_folder: /assets/foto }
+          - name: vantaggi
+            label: "Punti di forza (le 4 icone)"
+            label_singular: punto
+            widget: list
+            i18n: true
+            fields:
+              - { name: titolo, label: Titolo }
+              - { name: testo, label: Testo }
+          - { name: partner_occhiello, label: "Partner: scritta piccola", i18n: true }
+          - { name: partner_titolo, label: "Partner: titolo", i18n: true }
+
+      - name: negozio
+        label: "Negozio"
+        file: dati/testi/negozio.json
+        format: json
+        i18n: true
+        fields:
+          - { name: titolo_pagina, label: "Titolo della scheda del browser", i18n: true }
+          - { name: titolo, label: "Titolo", i18n: true }
+          - { name: sottotitolo, label: "Sottotitolo", i18n: true }
+          - { name: filtro_tutte, label: "Filtro 'Tutte'", i18n: true }
+
+      - name: chi-sono
+        label: "Chi sono"
+        file: dati/testi/chi-sono.json
+        format: json
+        i18n: true
+        fields:
+          - { name: titolo_pagina, label: "Titolo della scheda del browser", i18n: true }
+          - { name: titolo, label: "Titolo", i18n: true }
+          - { name: sottotitolo, label: "Sottotitolo", i18n: true }
+          - { name: occhiello, label: "Scritta piccola", i18n: true }
+          - { name: titolo_sezione, label: "Titolo della sezione", i18n: true }
+          - { name: testo, label: "Testo (riga vuota = nuovo paragrafo)", widget: text, i18n: true }
+          - { name: pulsante, label: "Pulsante", i18n: true }
+          - { name: foto, label: "Foto (uguale in tutte le lingue)", widget: image, required: false, i18n: duplicate, media_folder: /assets/foto, public_folder: /assets/foto }
+
+      - name: contatti
+        label: "Contatti"
+        file: dati/testi/contatti.json
+        format: json
+        i18n: true
+        fields:
+          - { name: titolo_pagina, label: "Titolo della scheda del browser", i18n: true }
+          - { name: titolo, label: "Titolo", i18n: true }
+          - { name: sottotitolo, label: "Sottotitolo", i18n: true }
+          - { name: campo_nome, label: "Campo Nome", i18n: true }
+          - { name: campo_email, label: "Campo Email", i18n: true }
+          - { name: campo_motivo, label: "Campo Motivo", i18n: true }
+          - { name: motivi, label: "Scelte del campo Motivo", widget: list, i18n: true }
+          - { name: campo_messaggio, label: "Campo Messaggio", i18n: true }
+          - { name: pulsante, label: "Pulsante", i18n: true }
+
+      - name: checkout
+        label: "Carrello e checkout"
+        file: dati/testi/checkout.json
+        format: json
+        i18n: true
+        fields:
+          - { name: carrello_titolo_pagina, label: "Carrello: titolo della scheda del browser", i18n: true }
+          - { name: carrello_titolo, label: "Carrello: titolo", i18n: true }
+          - { name: titolo_pagina, label: "Checkout: titolo della scheda del browser", i18n: true }
+          - { name: titolo, label: "Checkout: titolo", i18n: true }
+          - { name: sottotitolo, label: "Checkout: sottotitolo", i18n: true }
+          - { name: opera_titolo_pagina, label: "Pagina opera: titolo di riserva", i18n: true }
+          - name: etichette
+            label: "Checkout: campi del modulo"
+            widget: object
+            collapsed: true
+            i18n: true
+            fields:
+              - { name: contatto, label: "Sezione Contatto", i18n: true }
+              - { name: email, label: "Email", i18n: true }
+              - { name: tel, label: "Telefono", i18n: true }
+              - { name: indirizzo, label: "Sezione Indirizzo", i18n: true }
+              - { name: nome, label: "Nome", i18n: true }
+              - { name: cognome, label: "Cognome", i18n: true }
+              - { name: via, label: "Via", i18n: true }
+              - { name: via2, label: "Via (seconda riga)", i18n: true }
+              - { name: cap, label: "CAP", i18n: true }
+              - { name: citta, label: "Città", i18n: true }
+              - { name: prov, label: "Provincia", i18n: true }
+              - { name: paese, label: "Paese", i18n: true }
+              - { name: metodo, label: "Sezione Spedizione", i18n: true }
+              - { name: note, label: "Note", i18n: true }
+              - { name: termini, label: "Accetto i termini", i18n: true }
+              - { name: riepilogo, label: "Riepilogo ordine", i18n: true }
+              - { name: paga, label: "Pulsante pagamento", i18n: true }
+
+  # ---------------------------------------------------------------- IMPOSTAZIONI
+  - name: impostazioni
+    label: Impostazioni
+    editor:
+      preview: false
+    files:
+      - name: generali
+        label: "Social, partner e video"
+        file: dati/impostazioni.json
+        format: json
+        fields:
+          - name: social
+            label: "Link social (lascia vuoto per nasconderlo)"
+            widget: object
+            fields:
+              - { name: instagram, label: Instagram, required: false }
+              - { name: facebook, label: Facebook, required: false }
+              - { name: tiktok, label: TikTok, required: false }
+          - name: partner
+            label: "Partner (in fondo alla home)"
+            label_singular: partner
+            widget: list
+            summary: "{{fields.nome}}"
+            fields:
+              - { name: nome, label: Nome }
+              - { name: logo, label: "Logo (facoltativo)", widget: image, required: false, media_folder: /assets/foto, public_folder: /assets/foto }
+              - { name: link, label: "Link al loro sito o Instagram (facoltativo)", required: false }
+          - name: video
+            label: "Video di sfondo della home"
+            widget: object
+            fields:
+              - { name: file, label: "Video MP4 (senza audio, 10-20 secondi, sotto i 5 MB)", widget: file, required: false, media_folder: /assets/video, public_folder: /assets/video }
+              - { name: opacita, label: "Visibilità (0 = invisibile, 1 = pieno; consigliato 0.2-0.4)", widget: number, value_type: float, min: 0, max: 1, step: 0.05 }
+
+      - name: spedizioni
+        label: "Tariffe di spedizione"
+        file: dati/spedizioni.json
+        format: json
+        fields:
+          - { name: imballo_kg, label: "Peso dell'imballo aggiunto a ogni ordine (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+          - { name: gratis_da, label: "Spedizione standard gratis sopra (€) — 0 = mai", widget: number, value_type: float, min: 0 }
+          - name: zone
+            label: Zone
+            widget: object
+            hint: "Per ogni servizio: fasce di peso (fino a X kg costa Y €). Oltre l'ultima fascia si aggiungono i € per ogni kg in più."
+            fields:
+              - name: canarie
+                label: "Canarie"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: standard
+                    label: Standard
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                  - name: express
+                    label: Express
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+              - name: spagna
+                label: "Spagna peninsulare e Baleari"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: standard
+                    label: Standard
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                  - name: express
+                    label: Express
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+              - name: ue
+                label: "Unione Europea"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: standard
+                    label: Standard
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                  - name: express
+                    label: Express
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+              - name: europa
+                label: "Europa fuori UE (UK, Svizzera, Norvegia…)"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: standard
+                    label: Standard
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                  - name: express
+                    label: Express
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+              - name: mondo
+                label: "Resto del mondo"
+                widget: object
+                collapsed: true
+                fields:
+                  - name: standard
+                    label: Standard
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                  - name: express
+                    label: Express
+                    widget: object
+                    fields:
+                      - name: tariffe
+                        label: "Fasce di peso"
+                        label_singular: fascia
+                        widget: list
+                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
+                        fields:
+                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
+                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }

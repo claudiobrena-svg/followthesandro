@@ -1,0 +1,20 @@
+{
+  "en": {
+    "titolo_pagina": "Shop · followthesandro",
+    "titolo": "The works",
+    "sottotitolo": "Every piece is unique: once it is sold, it is gone.",
+    "filtro_tutte": "All"
+  },
+  "es": {
+    "titolo_pagina": "Tienda · followthesandro",
+    "titolo": "Las obras",
+    "sottotitolo": "Cada pieza es única: cuando se vende, no vuelve.",
+    "filtro_tutte": "Todas"
+  },
+  "it": {
+    "titolo_pagina": "Negozio · followthesandro",
+    "titolo": "Le opere",
+    "sottotitolo": "Ogni pezzo è unico: quando è venduto, non torna più.",
+    "filtro_tutte": "Tutte"
+  }
+}

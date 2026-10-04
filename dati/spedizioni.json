@@ -1,0 +1,196 @@
+{
+  "imballo_kg": 0.5,
+  "gratis_da": 0,
+  "zone": {
+    "canarie": {
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 6.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 9.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 15.0
+          }
+        ],
+        "kg_extra": 1.5,
+        "giorni": "2-4"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 12.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 16.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 25.0
+          }
+        ],
+        "kg_extra": 2.0,
+        "giorni": "1-2"
+      }
+    },
+    "spagna": {
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 12.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 18.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 30.0
+          }
+        ],
+        "kg_extra": 2.5,
+        "giorni": "4-7"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 25.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 32.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 50.0
+          }
+        ],
+        "kg_extra": 4.0,
+        "giorni": "2-3"
+      }
+    },
+    "ue": {
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 18.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 26.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 45.0
+          }
+        ],
+        "kg_extra": 3.5,
+        "giorni": "6-10"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 35.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 45.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 75.0
+          }
+        ],
+        "kg_extra": 6.0,
+        "giorni": "3-5"
+      }
+    },
+    "europa": {
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 22.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 32.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 55.0
+          }
+        ],
+        "kg_extra": 4.0,
+        "giorni": "7-12"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 40.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 52.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 85.0
+          }
+        ],
+        "kg_extra": 7.0,
+        "giorni": "3-5"
+      }
+    },
+    "mondo": {
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 30.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 45.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 80.0
+          }
+        ],
+        "kg_extra": 6.0,
+        "giorni": "10-20"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1.0,
+            "prezzo": 55.0
+          },
+          {
+            "fino_a_kg": 3.0,
+            "prezzo": 75.0
+          },
+          {
+            "fino_a_kg": 10.0,
+            "prezzo": 120.0
+          }
+        ],
+        "kg_extra": 10.0,
+        "giorni": "4-7"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "en": {
+    "titolo_pagina": "Contact · followthesandro",
+    "titolo": "Contact",
+    "sottotitolo": "A piece you have seen, a custom idea or just a hello from the island.",
+    "campo_nome": "Name",
+    "campo_email": "Email",
+    "campo_motivo": "What are you interested in",
+    "motivi": [
+      "A custom piece",
+      "Information about a work",
+      "Order or shipping",
+      "Collaboration or market"
+    ],
+    "campo_messaggio": "Tell me your idea (subject, size, thread colours)",
+    "pulsante": "Send message"
+  },
+  "es": {
+    "titolo_pagina": "Contacto · followthesandro",
+    "titolo": "Contacto",
+    "sottotitolo": "Una obra que has visto, una idea a medida o solo un saludo desde la isla.",
+    "campo_nome": "Nombre",
+    "campo_email": "Email",
+    "campo_motivo": "Qué te interesa",
+    "motivi": [
+      "Una obra a medida",
+      "Información sobre una obra",
+      "Pedido o envío",
+      "Colaboración o mercadillo"
+    ],
+    "campo_messaggio": "Cuéntame tu idea (tema, medidas, colores del hilo)",
+    "pulsante": "Enviar mensaje"
+  },
+  "it": {
+    "titolo_pagina": "Contatti · followthesandro",
+    "titolo": "Contatti",
+    "sottotitolo": "Un'opera che hai visto, un'idea su misura o solo un saluto dall'isola.",
+    "campo_nome": "Nome",
+    "campo_email": "Email",
+    "campo_motivo": "Cosa ti interessa",
+    "motivi": [
+      "Un'opera su misura",
+      "Informazioni su un'opera",
+      "Ordine o spedizione",
+      "Collaborazione o mercatino"
+    ],
+    "campo_messaggio": "Raccontami la tua idea (soggetto, misure, colori del filo)",
+    "pulsante": "Invia messaggio"
+  }
+}

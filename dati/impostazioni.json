@@ -1,0 +1,38 @@
+{
+  "social": {
+    "instagram": "https://www.instagram.com/followthesandro/",
+    "facebook": "",
+    "tiktok": ""
+  },
+  "partner": [
+    {
+      "nome": "Partner 1",
+      "logo": "",
+      "link": ""
+    },
+    {
+      "nome": "Partner 2",
+      "logo": "",
+      "link": ""
+    },
+    {
+      "nome": "Partner 3",
+      "logo": "",
+      "link": ""
+    },
+    {
+      "nome": "Partner 4",
+      "logo": "",
+      "link": ""
+    },
+    {
+      "nome": "Partner 5",
+      "logo": "",
+      "link": ""
+    }
+  ],
+  "video": {
+    "file": "",
+    "opacita": 0.28
+  }
+}

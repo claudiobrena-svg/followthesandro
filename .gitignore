@@ -2,3 +2,8 @@ __pycache__/
 node_modules/
 .DS_Store
 Thumbs.db
+
+# Pagine generate da strumenti/genera_pagine.py (Netlify le crea a ogni pubblicazione)
+/*.html
+/es/
+/it/

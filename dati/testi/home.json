@@ -1,0 +1,260 @@
+{
+  "en": {
+    "titolo_pagina": "followthesandro · String art on Fuerteventura driftwood",
+    "hero_titolo": "String art from the wood\nthe sea gives back",
+    "hero_sottotitolo": "Handmade · Reclaimed wood · Fuerteventura",
+    "hero_pulsante_1": "Discover the works",
+    "hero_pulsante_2": "Create your own piece",
+    "nuove_occhiello": "Fresh from the workshop",
+    "nuove_titolo": "Latest works",
+    "legno_occhiello": "The wood",
+    "legno_titolo": "Collected on foot, beach after beach",
+    "legno_testo": "Every board starts as a piece of wood found on the most remote beaches of Fuerteventura: planks from old boats, crates, branches polished by the Atlantic. Nothing is bought, everything is saved.\n\nSalt, sun and wind decide the colour and the grain. That is why no two pieces are ever the same.",
+    "legno_pulsante": "My story",
+    "legno_foto": "",
+    "processo_occhiello": "The process",
+    "processo_titolo": "From the beach to your wall",
+    "processo_testo": "No machines, no prints. Just hands, a hammer and patience.",
+    "passi": [
+      {
+        "titolo": "Search",
+        "testo": "Miles of empty coastline to find the right wood, brought in by the tide."
+      },
+      {
+        "titolo": "Recovery",
+        "testo": "The wood is cleaned, dried and sanded by hand, without erasing its story."
+      },
+      {
+        "titolo": "Nails",
+        "testo": "Hundreds, sometimes thousands of nails hammered in one by one following the design."
+      },
+      {
+        "titolo": "Thread",
+        "testo": "The thread is pulled tight, nail after nail, until the shape comes to life."
+      }
+    ],
+    "numeri_occhiello": "In numbers",
+    "numeri_titolo": "Millions of nails, one at a time",
+    "numeri": [
+      {
+        "valore": 1000000,
+        "suffisso": "+",
+        "etichetta": "nails hammered by hand"
+      },
+      {
+        "valore": 100,
+        "suffisso": "%",
+        "etichetta": "reclaimed wood"
+      },
+      {
+        "valore": 40000,
+        "suffisso": " m",
+        "etichetta": "of thread pulled tight"
+      },
+      {
+        "valore": 1,
+        "suffisso": "",
+        "etichetta": "island, Fuerteventura"
+      }
+    ],
+    "preferite_occhiello": "Most loved",
+    "preferite_titolo": "Favourite works",
+    "misura_occhiello": "Made to order",
+    "misura_titolo": "Your van, your wave, your name",
+    "misura_testo": "Send me a photo or an idea: your camper van, your surfboard, the island you love, a name or a date. I will turn it into a piece of nails and thread on reclaimed wood.",
+    "misura_pulsante": "Request a custom piece",
+    "misura_foto": "",
+    "vantaggi": [
+      {
+        "titolo": "Saved wood",
+        "testo": "Recovered from the sea, never cut"
+      },
+      {
+        "titolo": "Handmade",
+        "testo": "Nail after nail"
+      },
+      {
+        "titolo": "Safe shipping",
+        "testo": "Packed with recycled materials"
+      },
+      {
+        "titolo": "One of a kind",
+        "testo": "With a signed certificate"
+      }
+    ],
+    "partner_occhiello": "Where to find me",
+    "partner_titolo": "Markets, surf shops and island friends"
+  },
+  "es": {
+    "titolo_pagina": "followthesandro · String art con madera de Fuerteventura",
+    "hero_titolo": "String art con la madera\nque el mar devuelve",
+    "hero_sottotitolo": "Hecho a mano · Madera recuperada · Fuerteventura",
+    "hero_pulsante_1": "Descubre las obras",
+    "hero_pulsante_2": "Crea tu obra",
+    "nuove_occhiello": "Recién salidas del taller",
+    "nuove_titolo": "Últimas obras",
+    "legno_occhiello": "La madera",
+    "legno_titolo": "Recogida a pie, playa tras playa",
+    "legno_testo": "Cada tabla nace de un trozo de madera encontrado en las playas más aisladas de Fuerteventura: tablones de viejas barcas, cajas, ramas pulidas por el Atlántico. Nada se compra, todo se salva.\n\nLa sal, el sol y el viento deciden el color y las vetas. Por eso no existen dos obras iguales.",
+    "legno_pulsante": "Mi historia",
+    "legno_foto": "",
+    "processo_occhiello": "El proceso",
+    "processo_titolo": "De la playa a tu pared",
+    "processo_testo": "Sin máquinas, sin impresiones. Solo manos, martillo y paciencia.",
+    "passi": [
+      {
+        "titolo": "Búsqueda",
+        "testo": "Kilómetros de costa desierta para encontrar la madera adecuada, traída por la marea."
+      },
+      {
+        "titolo": "Recuperación",
+        "testo": "La madera se limpia, se seca y se lija a mano, sin borrar su historia."
+      },
+      {
+        "titolo": "Clavos",
+        "testo": "Cientos, a veces miles de clavos colocados uno a uno siguiendo el dibujo."
+      },
+      {
+        "titolo": "Hilo",
+        "testo": "El hilo se tensa clavo tras clavo hasta que la forma cobra vida."
+      }
+    ],
+    "numeri_occhiello": "En números",
+    "numeri_titolo": "Millones de clavos, uno a uno",
+    "numeri": [
+      {
+        "valore": 1000000,
+        "suffisso": "+",
+        "etichetta": "clavos colocados a mano"
+      },
+      {
+        "valore": 100,
+        "suffisso": "%",
+        "etichetta": "madera recuperada"
+      },
+      {
+        "valore": 40000,
+        "suffisso": " m",
+        "etichetta": "de hilo tensado"
+      },
+      {
+        "valore": 1,
+        "suffisso": "",
+        "etichetta": "isla, Fuerteventura"
+      }
+    ],
+    "preferite_occhiello": "Las más queridas",
+    "preferite_titolo": "Las obras favoritas",
+    "misura_occhiello": "A medida",
+    "misura_titolo": "Tu furgo, tu ola, tu nombre",
+    "misura_testo": "Mándame una foto o una idea: tu furgoneta, tu tabla de surf, la isla de tu corazón, un nombre o una fecha. La convierto en una obra de clavos e hilo sobre madera recuperada.",
+    "misura_pulsante": "Pide una obra a medida",
+    "misura_foto": "",
+    "vantaggi": [
+      {
+        "titolo": "Madera salvada",
+        "testo": "Recuperada del mar, nunca talada"
+      },
+      {
+        "titolo": "Hecho a mano",
+        "testo": "Clavo a clavo"
+      },
+      {
+        "titolo": "Envío protegido",
+        "testo": "Embalaje con materiales reciclados"
+      },
+      {
+        "titolo": "Pieza única",
+        "testo": "Con certificado firmado"
+      }
+    ],
+    "partner_occhiello": "Dónde encontrarme",
+    "partner_titolo": "Mercadillos, surf shops y amigos de la isla"
+  },
+  "it": {
+    "titolo_pagina": "followthesandro · String art con legno di Fuerteventura",
+    "hero_titolo": "String art dal legno\nche il mare restituisce",
+    "hero_sottotitolo": "Fatto a mano · Legno recuperato · Fuerteventura",
+    "hero_pulsante_1": "Scopri le opere",
+    "hero_pulsante_2": "Crea la tua opera",
+    "nuove_occhiello": "Appena uscite dal laboratorio",
+    "nuove_titolo": "Ultime opere",
+    "legno_occhiello": "Il legno",
+    "legno_titolo": "Raccolto a piedi, spiaggia dopo spiaggia",
+    "legno_testo": "Ogni tavola nasce da un pezzo di legno trovato sulle spiagge più isolate di Fuerteventura: assi di vecchie barche, cassette, rami levigati dall'Atlantico. Niente viene comprato, tutto viene salvato.\n\nIl sale, il sole e il vento decidono il colore e le venature. Per questo non esistono due opere uguali.",
+    "legno_pulsante": "La mia storia",
+    "legno_foto": "",
+    "processo_occhiello": "Il processo",
+    "processo_titolo": "Dalla spiaggia alla tua parete",
+    "processo_testo": "Nessuna macchina, nessuna stampa. Solo mani, martello e pazienza.",
+    "passi": [
+      {
+        "titolo": "Ricerca",
+        "testo": "Chilometri di costa deserta per trovare il legno giusto, portato dalla marea."
+      },
+      {
+        "titolo": "Recupero",
+        "testo": "Il legno viene pulito, asciugato e levigato a mano, senza cancellare la sua storia."
+      },
+      {
+        "titolo": "Chiodi",
+        "testo": "Centinaia, a volte migliaia di chiodi piantati uno a uno seguendo il disegno."
+      },
+      {
+        "titolo": "Filo",
+        "testo": "Il filo viene teso chiodo dopo chiodo finché la forma prende vita."
+      }
+    ],
+    "numeri_occhiello": "In numeri",
+    "numeri_titolo": "Milioni di chiodi, uno alla volta",
+    "numeri": [
+      {
+        "valore": 1000000,
+        "suffisso": "+",
+        "etichetta": "chiodi piantati a mano"
+      },
+      {
+        "valore": 100,
+        "suffisso": "%",
+        "etichetta": "legno recuperato"
+      },
+      {
+        "valore": 40000,
+        "suffisso": " m",
+        "etichetta": "di filo teso"
+      },
+      {
+        "valore": 1,
+        "suffisso": "",
+        "etichetta": "isola, Fuerteventura"
+      }
+    ],
+    "preferite_occhiello": "Le più amate",
+    "preferite_titolo": "Le opere preferite",
+    "misura_occhiello": "Su misura",
+    "misura_titolo": "Il tuo van, la tua onda, il tuo nome",
+    "misura_testo": "Mandami una foto o un'idea: il tuo furgone, la tavola da surf, l'isola del cuore, un nome o una data. La trasformo in un'opera di chiodi e filo su legno recuperato.",
+    "misura_pulsante": "Richiedi un'opera su misura",
+    "misura_foto": "",
+    "vantaggi": [
+      {
+        "titolo": "Legno salvato",
+        "testo": "Recuperato dal mare, mai tagliato"
+      },
+      {
+        "titolo": "Fatto a mano",
+        "testo": "Chiodo dopo chiodo"
+      },
+      {
+        "titolo": "Spedizione protetta",
+        "testo": "Imballo con materiali riciclati"
+      },
+      {
+        "titolo": "Pezzo unico",
+        "testo": "Con certificato firmato"
+      }
+    ],
+    "partner_occhiello": "Dove trovarmi",
+    "partner_titolo": "Mercatini, surf shop e amici dell'isola"
+  }
+}

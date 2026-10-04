@@ -1,0 +1,92 @@
+{
+  "en": {
+    "descrizione_sito": "followthesandro: handmade string art on driftwood collected from the beaches of Fuerteventura.",
+    "banner": "Every piece is one of a kind: Fuerteventura wood, nails and thread, all handmade",
+    "menu": {
+      "quadri": "Wall art",
+      "mini": "Small pieces",
+      "oggetti": "Objects",
+      "regali": "Gift ideas",
+      "su_misura": "Custom",
+      "chi_sono": "About",
+      "contatti": "Contact"
+    },
+    "footer": {
+      "testo": "Handmade string art on wood the sea leaves on the beaches of Fuerteventura.",
+      "titolo_opere": "Works",
+      "titolo_assistenza": "Help",
+      "titolo_altro": "More",
+      "spedizioni": "Shipping",
+      "resi": "Returns and refunds",
+      "cura_legno": "Wood care",
+      "contatti": "Contact",
+      "diario": "Island diary",
+      "chi_sono": "About",
+      "su_misura": "Custom pieces",
+      "copyright": "© 2026 followthesandro. Handmade in Fuerteventura.",
+      "termini": "Terms and conditions",
+      "privacy": "Privacy",
+      "cookie": "Cookies"
+    }
+  },
+  "es": {
+    "descrizione_sito": "followthesandro: string art hecho a mano con madera recuperada en las playas de Fuerteventura.",
+    "banner": "Cada pieza es única: madera de Fuerteventura, clavos e hilo, todo hecho a mano",
+    "menu": {
+      "quadri": "Cuadros",
+      "mini": "Formatos pequeños",
+      "oggetti": "Objetos",
+      "regali": "Ideas de regalo",
+      "su_misura": "A medida",
+      "chi_sono": "Sobre mí",
+      "contatti": "Contacto"
+    },
+    "footer": {
+      "testo": "String art hecho a mano con la madera que el mar deja en las playas de Fuerteventura.",
+      "titolo_opere": "Obras",
+      "titolo_assistenza": "Ayuda",
+      "titolo_altro": "Más",
+      "spedizioni": "Envíos",
+      "resi": "Devoluciones y reembolsos",
+      "cura_legno": "Cuidado de la madera",
+      "contatti": "Contacto",
+      "diario": "Diario desde la isla",
+      "chi_sono": "Sobre mí",
+      "su_misura": "Obras a medida",
+      "copyright": "© 2026 followthesandro. Hecho a mano en Fuerteventura.",
+      "termini": "Términos y condiciones",
+      "privacy": "Privacidad",
+      "cookie": "Cookies"
+    }
+  },
+  "it": {
+    "descrizione_sito": "followthesandro: string art fatta a mano con legno recuperato sulle spiagge di Fuerteventura.",
+    "banner": "Ogni pezzo è unico: legno di Fuerteventura, chiodi e filo, tutto fatto a mano",
+    "menu": {
+      "quadri": "Quadri",
+      "mini": "Piccoli formati",
+      "oggetti": "Oggetti",
+      "regali": "Idee regalo",
+      "su_misura": "Su misura",
+      "chi_sono": "Chi sono",
+      "contatti": "Contatti"
+    },
+    "footer": {
+      "testo": "String art fatta a mano con legno che il mare lascia sulle spiagge di Fuerteventura.",
+      "titolo_opere": "Opere",
+      "titolo_assistenza": "Assistenza",
+      "titolo_altro": "Altro",
+      "spedizioni": "Spedizioni",
+      "resi": "Resi e rimborsi",
+      "cura_legno": "Cura del legno",
+      "contatti": "Contatti",
+      "diario": "Diario dall'isola",
+      "chi_sono": "Chi sono",
+      "su_misura": "Opere su misura",
+      "copyright": "© 2026 followthesandro. Fatto a mano a Fuerteventura.",
+      "termini": "Termini e condizioni",
+      "privacy": "Privacy",
+      "cookie": "Cookie"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "en": {
+    "carrello_titolo_pagina": "Cart · followthesandro",
+    "carrello_titolo": "Your cart",
+    "titolo_pagina": "Checkout · followthesandro",
+    "titolo": "Checkout",
+    "sottotitolo": "Secure payment · Tracked shipping worldwide",
+    "etichette": {
+      "contatto": "Contact",
+      "email": "Email",
+      "tel": "Phone (for the courier)",
+      "indirizzo": "Shipping address",
+      "nome": "First name",
+      "cognome": "Last name",
+      "via": "Street and number",
+      "via2": "Apartment, floor, etc. (optional)",
+      "cap": "Postcode",
+      "citta": "City",
+      "prov": "Province / State / Region",
+      "paese": "Country",
+      "metodo": "Shipping method",
+      "note": "Notes for the order (optional)",
+      "termini": "I accept the terms and conditions of sale",
+      "riepilogo": "Order summary",
+      "paga": "Proceed to payment"
+    },
+    "opera_titolo_pagina": "Artwork · followthesandro"
+  },
+  "es": {
+    "carrello_titolo_pagina": "Carrito · followthesandro",
+    "carrello_titolo": "Tu carrito",
+    "titolo_pagina": "Pago · followthesandro",
+    "titolo": "Finalizar compra",
+    "sottotitolo": "Pago seguro · Envío con seguimiento a todo el mundo",
+    "etichette": {
+      "contatto": "Contacto",
+      "email": "Email",
+      "tel": "Teléfono (para el mensajero)",
+      "indirizzo": "Dirección de envío",
+      "nome": "Nombre",
+      "cognome": "Apellidos",
+      "via": "Calle y número",
+      "via2": "Piso, puerta, etc. (opcional)",
+      "cap": "Código postal",
+      "citta": "Ciudad",
+      "prov": "Provincia / Estado / Región",
+      "paese": "País",
+      "metodo": "Método de envío",
+      "note": "Notas del pedido (opcional)",
+      "termini": "Acepto los términos y condiciones de venta",
+      "riepilogo": "Resumen del pedido",
+      "paga": "Ir al pago"
+    },
+    "opera_titolo_pagina": "Obra · followthesandro"
+  },
+  "it": {
+    "carrello_titolo_pagina": "Carrello · followthesandro",
+    "carrello_titolo": "Il tuo carrello",
+    "titolo_pagina": "Checkout · followthesandro",
+    "titolo": "Checkout",
+    "sottotitolo": "Pagamento sicuro · Spedizione tracciata in tutto il mondo",
+    "etichette": {
+      "contatto": "Contatto",
+      "email": "Email",
+      "tel": "Telefono (per il corriere)",
+      "indirizzo": "Indirizzo di spedizione",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "via": "Via e numero civico",
+      "via2": "Interno, scala, ecc. (facoltativo)",
+      "cap": "CAP",
+      "citta": "Città",
+      "prov": "Provincia / Stato / Regione",
+      "paese": "Paese",
+      "metodo": "Metodo di spedizione",
+      "note": "Note per l'ordine (facoltativo)",
+      "termini": "Accetto i termini e le condizioni di vendita",
+      "riepilogo": "Riepilogo ordine",
+      "paga": "Procedi al pagamento"
+    },
+    "opera_titolo_pagina": "Opera · followthesandro"
+  }
+}

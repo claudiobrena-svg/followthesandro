@@ -1,7 +1,7 @@
-# Pubblicazione su Netlify: sito statico, nessuna compilazione
+# Pubblicazione su Netlify: a ogni modifica genera le pagine dai file in dati/
 [build]
   publish = "."
-  command = ""
+  command = "python3 strumenti/genera_pagine.py"
 
 # Finché il sito è in prova: chiede a Google di non indicizzarlo. Togliere al lancio.
 [[headers]]
