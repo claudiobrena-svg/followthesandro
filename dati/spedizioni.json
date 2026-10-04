@@ -1,5 +1,5 @@
 {
-  "fonte": "Listino Correos 2026 Canarias (particolari, tariffe allo sportello)",
+  "fonte": "iPaq Internacional (simulatore online Correos, ottobre 2026) per Italia, Francia, Germania, Regno Unito, USA e resto UE; listino Correos 2026 Canarie per Spagna, Portogallo e resto del mondo",
   "imballo_kg": 0.5,
   "gratis_da": 0,
   "zone": [
@@ -227,29 +227,368 @@
       }
     },
     {
-      "codice": "eu1",
-      "nome": "Europa 1 (Italia, Francia, Germania, UK, Svizzera…)",
+      "codice": "italia",
+      "nome": "Italia (iPaq Internacional, prezzi online Correos)",
       "paesi": [
-        "DE",
+        "IT",
+        "SM",
+        "VA"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 14.11
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 16.46
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 21.79
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 34.24
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 53.42
+          }
+        ],
+        "kg_extra": 1.92,
+        "giorni": "5-8"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 33.16
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.18
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 48.57
+          }
+        ],
+        "kg_extra": 4.39,
+        "giorni": "3-5"
+      }
+    },
+    {
+      "codice": "francia",
+      "nome": "Francia (iPaq Internacional)",
+      "paesi": [
+        "FR",
+        "MC"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 13.33
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 14.93
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 18.1
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 23.8
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 32.91
+          }
+        ],
+        "kg_extra": 0.91,
+        "giorni": "5-8"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 33.16
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.18
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 48.57
+          }
+        ],
+        "kg_extra": 4.39,
+        "giorni": "3-5"
+      }
+    },
+    {
+      "codice": "germania",
+      "nome": "Germania (iPaq Internacional)",
+      "paesi": [
+        "DE"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 9.72
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 11.48
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 15.59
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 21.95
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 35.37
+          }
+        ],
+        "kg_extra": 1.34,
+        "giorni": "5-8"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 33.16
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.18
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 48.57
+          }
+        ],
+        "kg_extra": 4.39,
+        "giorni": "3-5"
+      }
+    },
+    {
+      "codice": "regnounito",
+      "nome": "Regno Unito (iPaq Internacional; 2 e 10 kg stimati)",
+      "paesi": [
+        "GB",
+        "JE",
+        "GG"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 17.76
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 19.4
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 24.21
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 32.2
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 48.11
+          }
+        ],
+        "kg_extra": 1.59,
+        "giorni": "5-10"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 33.16
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.18
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 48.57
+          }
+        ],
+        "kg_extra": 4.39,
+        "giorni": "3-5"
+      }
+    },
+    {
+      "codice": "ue",
+      "nome": "Altri paesi UE (stima: prezzi iPaq dell'Italia)",
+      "paesi": [
         "AT",
         "BE",
         "DK",
-        "FR",
-        "GI",
         "GR",
         "IE",
-        "IT",
-        "JE",
-        "GG",
         "LU",
-        "MC",
-        "NO",
         "NL",
-        "GB",
-        "SM",
         "SE",
-        "CH",
-        "VA"
+        "BG",
+        "CY",
+        "HR",
+        "SK",
+        "SI",
+        "EE",
+        "FI",
+        "HU",
+        "LV",
+        "LT",
+        "PL",
+        "CZ",
+        "RO",
+        "MT"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 14.11
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 16.46
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 21.79
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 34.24
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 53.42
+          }
+        ],
+        "kg_extra": 1.92,
+        "giorni": "5-10"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 36.05
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 40.86
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 48.05
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 53.96
+          }
+        ],
+        "kg_extra": 5.91,
+        "giorni": "4-6"
+      }
+    },
+    {
+      "codice": "usa",
+      "nome": "Stati Uniti (iPaq Internacional)",
+      "paesi": [
+        "US"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 20.38
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 27.5
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 48.43
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 82.8
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 152.27
+          }
+        ],
+        "kg_extra": 6.95,
+        "giorni": "7-14"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 45.99
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 52.53
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 65.71
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 77.04
+          }
+        ],
+        "kg_extra": 11.33,
+        "giorni": "4-7"
+      }
+    },
+    {
+      "codice": "eu1",
+      "nome": "Europa 1 fuori UE (Svizzera, Norvegia…; listino)",
+      "paesi": [
+        "GI",
+        "NO",
+        "CH"
       ],
       "standard": {
         "tariffe": [
@@ -302,29 +641,16 @@
     },
     {
       "codice": "eu2",
-      "nome": "Europa 2 (Polonia, Croazia, Finlandia, Marocco…)",
+      "nome": "Europa 2 fuori UE (Islanda, Marocco…; listino)",
       "paesi": [
         "DZ",
-        "BG",
-        "CY",
-        "HR",
-        "SK",
-        "SI",
-        "EE",
-        "FI",
         "GL",
-        "HU",
         "IS",
         "FO",
         "XK",
-        "LV",
         "LI",
-        "LT",
         "MA",
         "ME",
-        "PL",
-        "CZ",
-        "RO",
         "TN"
       ],
       "standard": {
@@ -378,13 +704,12 @@
     },
     {
       "codice": "eu3",
-      "nome": "Europa 3 (Malta, Turchia, Serbia…; Express con prezzi Europa 2)",
+      "nome": "Europa 3 (Turchia, Serbia…; listino)",
       "paesi": [
         "AL",
         "BY",
         "BA",
         "MK",
-        "MT",
         "MD",
         "RU",
         "RS",
@@ -442,9 +767,8 @@
     },
     {
       "codice": "america",
-      "nome": "America",
+      "nome": "America (escl. USA; listino)",
       "paesi": [
-        "US",
         "CA",
         "MX",
         "BR",
