@@ -1,0 +1,64 @@
+# Pannello di gestione delle opere (Decap CMS)
+# In locale salva direttamente nei file grazie a "decap-server".
+# Online: va collegato all'hosting (es. Netlify + GitHub) cambiando "backend".
+backend:
+  name: git-gateway
+  branch: main
+local_backend: true
+
+locale: it
+media_folder: assets/prodotti
+public_folder: /assets/prodotti
+
+collections:
+  - name: negozio
+    label: Negozio
+    editor:
+      preview: false
+    files:
+      - name: prodotti
+        label: Opere in vendita
+        file: dati/prodotti.json
+        format: json
+        fields:
+          - name: prodotti
+            label: Opere
+            label_singular: opera
+            widget: list
+            summary: "{{fields.nome.it}} · {{fields.prezzo}} €"
+            fields:
+              - { name: id, label: "Numero opera (unico, non cambiarlo dopo averlo messo)", widget: number, value_type: int, min: 1 }
+              - name: nome
+                label: Nome
+                widget: object
+                fields:
+                  - { name: en, label: "Nome in inglese" }
+                  - { name: es, label: "Nome in spagnolo" }
+                  - { name: it, label: "Nome in italiano" }
+              - name: cat
+                label: Categoria
+                widget: select
+                options:
+                  - { label: "Quadri", value: quadri }
+                  - { label: "Piccoli formati", value: mini }
+                  - { label: "Oggetti", value: oggetti }
+                  - { label: "Idee regalo", value: regali }
+              - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+              - { name: peso, label: "Peso imballata (kg)", widget: number, value_type: float, min: 0, step: 0.1, hint: "Serve per calcolare la spedizione" }
+              - { name: foto, label: "Foto", widget: image, required: false, hint: "Trascina qui la foto (meglio quadrata, circa 1200×1200 px). Senza foto si vede un disegno segnaposto." }
+              - { name: venduto, label: "Venduto", widget: boolean, default: false, hint: "Se attivo l'opera resta visibile ma non si può comprare" }
+              - { name: nuovo, label: "In 'Ultime opere' in home", widget: boolean, default: false }
+              - { name: popolare, label: "In 'Le opere preferite' in home", widget: boolean, default: false }
+              - name: segnaposto
+                label: "Disegno segnaposto (solo se manca la foto)"
+                widget: object
+                collapsed: true
+                required: false
+                fields:
+                  - name: forma
+                    label: Forma
+                    widget: select
+                    required: false
+                    options: [cerchio, cuore, stella, vulcano, onda, tavola, isola, van]
+                  - { name: filo, label: "Colore filo (es. #3f6331)", required: false }
+                  - { name: legno, label: "Colore legno (es. #c9a27a)", required: false }

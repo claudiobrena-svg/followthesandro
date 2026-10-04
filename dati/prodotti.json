@@ -1,0 +1,264 @@
+{
+  "prodotti": [
+    {
+      "nuovo": true,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "van",
+        "filo": "#3f6331",
+        "legno": "#c9a27a"
+      },
+      "venduto": false,
+      "prezzo": 290,
+      "peso": 3.5,
+      "cat": "quadri",
+      "nome": {
+        "en": "\"Follow the Sandro\" Van",
+        "es": "Furgoneta \"Follow the Sandro\"",
+        "it": "Van \"Follow the Sandro\""
+      },
+      "id": 1
+    },
+    {
+      "nuovo": true,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "isola",
+        "filo": "#2a211b",
+        "legno": "#d8b98f"
+      },
+      "venduto": false,
+      "prezzo": 180,
+      "peso": 2,
+      "cat": "quadri",
+      "nome": {
+        "en": "Fuerteventura",
+        "es": "Fuerteventura",
+        "it": "Fuerteventura"
+      },
+      "id": 2
+    },
+    {
+      "nuovo": true,
+      "foto": "",
+      "popolare": false,
+      "segnaposto": {
+        "forma": "onda",
+        "filo": "#2f6f8f",
+        "legno": "#b8875a"
+      },
+      "venduto": false,
+      "prezzo": 160,
+      "peso": 2,
+      "cat": "quadri",
+      "nome": {
+        "en": "Corralejo Wave",
+        "es": "Ola de Corralejo",
+        "it": "Onda di Corralejo"
+      },
+      "id": 3
+    },
+    {
+      "nuovo": true,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "cerchio",
+        "filo": "#d9661c",
+        "legno": "#cfa77c"
+      },
+      "venduto": false,
+      "prezzo": 65,
+      "peso": 0.8,
+      "cat": "mini",
+      "nome": {
+        "en": "Cofete Sun",
+        "es": "Sol de Cofete",
+        "it": "Sole di Cofete"
+      },
+      "id": 4
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "vulcano",
+        "filo": "#8c3b1e",
+        "legno": "#d2b48c"
+      },
+      "venduto": false,
+      "prezzo": 70,
+      "peso": 0.8,
+      "cat": "mini",
+      "nome": {
+        "en": "Lobos Volcano",
+        "es": "Volcán de Lobos",
+        "it": "Vulcano di Lobos"
+      },
+      "id": 5
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "cuore",
+        "filo": "#b23a2e",
+        "legno": "#c49a6c"
+      },
+      "venduto": false,
+      "prezzo": 45,
+      "peso": 0.6,
+      "cat": "mini",
+      "nome": {
+        "en": "Wooden Heart",
+        "es": "Corazón de madera",
+        "it": "Cuore di legno"
+      },
+      "id": 6
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "tavola",
+        "filo": "#3f6331",
+        "legno": "#b8875a"
+      },
+      "venduto": false,
+      "prezzo": 120,
+      "peso": 2.5,
+      "cat": "oggetti",
+      "nome": {
+        "en": "Wall surfboard",
+        "es": "Tabla de surf de pared",
+        "it": "Tavola da surf da parete"
+      },
+      "id": 7
+    },
+    {
+      "nuovo": true,
+      "foto": "",
+      "popolare": false,
+      "segnaposto": {
+        "forma": "stella",
+        "filo": "#e0b23a",
+        "legno": "#a97c52"
+      },
+      "venduto": false,
+      "prezzo": 55,
+      "peso": 0.7,
+      "cat": "mini",
+      "nome": {
+        "en": "Desert Star",
+        "es": "Estrella del desierto",
+        "it": "Stella del deserto"
+      },
+      "id": 8
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "cerchio",
+        "filo": "#3f6331",
+        "legno": "#d8b98f"
+      },
+      "venduto": false,
+      "prezzo": 14,
+      "peso": 0.1,
+      "cat": "regali",
+      "nome": {
+        "en": "String art keyring",
+        "es": "Llavero de string art",
+        "it": "Portachiavi string art"
+      },
+      "id": 9
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": false,
+      "segnaposto": {
+        "forma": "stella",
+        "filo": "#2a211b",
+        "legno": "#c9a27a"
+      },
+      "venduto": false,
+      "prezzo": 29,
+      "peso": 0.4,
+      "cat": "regali",
+      "nome": {
+        "en": "Set of 3 coasters",
+        "es": "Set de 3 posavasos",
+        "it": "Set 3 sottobicchieri"
+      },
+      "id": 10
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": true,
+      "segnaposto": {
+        "forma": "isola",
+        "filo": "#2f6f8f",
+        "legno": "#b8875a"
+      },
+      "venduto": false,
+      "prezzo": 390,
+      "peso": 5,
+      "cat": "quadri",
+      "nome": {
+        "en": "XL Island Map",
+        "es": "Mapa de la isla XL",
+        "it": "Mappa dell'isola XL"
+      },
+      "id": 11
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": false,
+      "segnaposto": {
+        "forma": "onda",
+        "filo": "#d9661c",
+        "legno": "#a97c52"
+      },
+      "venduto": false,
+      "prezzo": 140,
+      "peso": 2,
+      "cat": "oggetti",
+      "nome": {
+        "en": "\"Wave\" Lamp",
+        "es": "Lámpara \"Ola\"",
+        "it": "Lampada \"Onda\""
+      },
+      "id": 12
+    },
+    {
+      "nuovo": false,
+      "foto": "",
+      "popolare": false,
+      "segnaposto": {
+        "forma": "cuore",
+        "filo": "#d9661c",
+        "legno": "#d2b48c"
+      },
+      "venduto": false,
+      "prezzo": 50,
+      "peso": 0.1,
+      "cat": "regali",
+      "nome": {
+        "en": "Gift card",
+        "es": "Tarjeta regalo",
+        "it": "Buono regalo"
+      },
+      "id": 13
+    }
+  ]
+}
