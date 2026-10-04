@@ -317,173 +317,42 @@ collections:
         fields:
           - { name: imballo_kg, label: "Peso dell'imballo aggiunto a ogni ordine (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
           - { name: gratis_da, label: "Spedizione standard gratis sopra (€) — 0 = mai", widget: number, value_type: float, min: 0 }
+          - { name: fonte, label: "Fonte delle tariffe (solo promemoria)", required: false }
           - name: zone
             label: Zone
-            widget: object
-            hint: "Per ogni servizio: fasce di peso (fino a X kg costa Y €). Oltre l'ultima fascia si aggiungono i € per ogni kg in più."
+            label_singular: zona
+            widget: list
+            summary: "{{fields.nome}}"
+            hint: "Zone come quelle di Correos. Non cambiare il codice di canarie, spagna e mondo: la Spagna si divide in base al CAP (35/38 = Canarie), 'mondo' vale per i paesi non elencati."
             fields:
-              - name: canarie
-                label: "Canarie"
+              - { name: codice, label: "Codice (breve, senza spazi)" }
+              - { name: nome, label: "Nome della zona" }
+              - { name: paesi, label: "Paesi (codici a 2 lettere separati da virgola, es. IT, FR, DE)", widget: list, required: false }
+              - name: standard
+                label: Standard (Paq Estándar / Paq Standard Internacional)
                 widget: object
-                collapsed: true
                 fields:
-                  - name: standard
-                    label: Standard
-                    widget: object
+                  - name: tariffe
+                    label: "Fasce di peso"
+                    label_singular: fascia
+                    widget: list
+                    summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
                     fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-                  - name: express
-                    label: Express
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-              - name: spagna
-                label: "Spagna peninsulare e Baleari"
+                      - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.05 }
+                      - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                  - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                  - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+              - name: express
+                label: Express (Paq Premium / Paq Premium Internacional)
                 widget: object
-                collapsed: true
                 fields:
-                  - name: standard
-                    label: Standard
-                    widget: object
+                  - name: tariffe
+                    label: "Fasce di peso"
+                    label_singular: fascia
+                    widget: list
+                    summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
                     fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-                  - name: express
-                    label: Express
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-              - name: ue
-                label: "Unione Europea"
-                widget: object
-                collapsed: true
-                fields:
-                  - name: standard
-                    label: Standard
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-                  - name: express
-                    label: Express
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-              - name: europa
-                label: "Europa fuori UE (UK, Svizzera, Norvegia…)"
-                widget: object
-                collapsed: true
-                fields:
-                  - name: standard
-                    label: Standard
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-                  - name: express
-                    label: Express
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-              - name: mondo
-                label: "Resto del mondo"
-                widget: object
-                collapsed: true
-                fields:
-                  - name: standard
-                    label: Standard
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
-                  - name: express
-                    label: Express
-                    widget: object
-                    fields:
-                      - name: tariffe
-                        label: "Fasce di peso"
-                        label_singular: fascia
-                        widget: list
-                        summary: "fino a {{fields.fino_a_kg}} kg → {{fields.prezzo}} €"
-                        fields:
-                          - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.1 }
-                          - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
-                      - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
-                      - { name: giorni, label: "Tempi di consegna (es. 2-4)" }
+                      - { name: fino_a_kg, label: "Fino a (kg)", widget: number, value_type: float, min: 0, step: 0.05 }
+                      - { name: prezzo, label: "Prezzo (€)", widget: number, value_type: float, min: 0 }
+                  - { name: kg_extra, label: "€ per ogni kg oltre l'ultima fascia", widget: number, value_type: float, min: 0 }
+                  - { name: giorni, label: "Tempi di consegna (es. 2-4)" }

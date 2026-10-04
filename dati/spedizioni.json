@@ -1,196 +1,790 @@
 {
+  "fonte": "Listino Correos 2026 Canarias (particolari, tariffe allo sportello)",
   "imballo_kg": 0.5,
   "gratis_da": 0,
-  "zone": {
-    "canarie": {
+  "zone": [
+    {
+      "codice": "canarie",
+      "nome": "Canarie (Zona 1, prezzi con IGIC di Correos)",
+      "paesi": [],
       "standard": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 6.0
+            "fino_a_kg": 1,
+            "prezzo": 12.07
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 9.0
+            "fino_a_kg": 5,
+            "prezzo": 15.12
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 15.0
+            "fino_a_kg": 10,
+            "prezzo": 20.3
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 24.59
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 29.76
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 34.5
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 39.13
           }
         ],
-        "kg_extra": 1.5,
-        "giorni": "2-4"
+        "kg_extra": 1.2,
+        "giorni": "2-3"
       },
       "express": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 12.0
+            "fino_a_kg": 1,
+            "prezzo": 13.58
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 16.0
+            "fino_a_kg": 5,
+            "prezzo": 16.71
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 25.0
+            "fino_a_kg": 10,
+            "prezzo": 21.88
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 26.04
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 31.75
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 43.24
           }
         ],
-        "kg_extra": 2.0,
+        "kg_extra": 1.24,
         "giorni": "1-2"
       }
     },
-    "spagna": {
+    {
+      "codice": "spagna",
+      "nome": "Spagna peninsulare, Baleari e Andorra (Zona 5)",
+      "paesi": [
+        "AD"
+      ],
       "standard": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 12.0
+            "fino_a_kg": 1,
+            "prezzo": 21.3
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 18.0
+            "fino_a_kg": 5,
+            "prezzo": 30.7
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 30.0
+            "fino_a_kg": 10,
+            "prezzo": 38.4
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 49.1
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 66.75
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 86.85
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 107.0
           }
         ],
-        "kg_extra": 2.5,
-        "giorni": "4-7"
+        "kg_extra": 4.2,
+        "giorni": "3-5"
       },
       "express": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 25.0
+            "fino_a_kg": 1,
+            "prezzo": 25.45
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 32.0
+            "fino_a_kg": 5,
+            "prezzo": 36.05
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 50.0
+            "fino_a_kg": 10,
+            "prezzo": 45.5
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 59.7
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 81.5
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 103.95
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 127.05
           }
         ],
-        "kg_extra": 4.0,
+        "kg_extra": 4.7,
         "giorni": "2-3"
       }
     },
-    "ue": {
+    {
+      "codice": "portogallo",
+      "nome": "Portogallo (Zona 9)",
+      "paesi": [
+        "PT"
+      ],
       "standard": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 18.0
+            "fino_a_kg": 1,
+            "prezzo": 23.65
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 26.0
+            "fino_a_kg": 5,
+            "prezzo": 37.85
           },
           {
-            "fino_a_kg": 10.0,
+            "fino_a_kg": 10,
             "prezzo": 45.0
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 57.4
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 86.25
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 106.91
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 132.8
           }
         ],
-        "kg_extra": 3.5,
+        "kg_extra": 5.65,
+        "giorni": "4-6"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 29.5
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 42.75
+          },
+          {
+            "fino_a_kg": 10,
+            "prezzo": 55.5
+          },
+          {
+            "fino_a_kg": 15,
+            "prezzo": 67.5
+          },
+          {
+            "fino_a_kg": 20,
+            "prezzo": 98.05
+          },
+          {
+            "fino_a_kg": 25,
+            "prezzo": 124.05
+          },
+          {
+            "fino_a_kg": 30,
+            "prezzo": 152.4
+          }
+        ],
+        "kg_extra": 5.9,
+        "giorni": "3-4"
+      }
+    },
+    {
+      "codice": "eu1",
+      "nome": "Europa 1 (Italia, Francia, Germania, UK, Svizzera…)",
+      "paesi": [
+        "DE",
+        "AT",
+        "BE",
+        "DK",
+        "FR",
+        "GI",
+        "GR",
+        "IE",
+        "IT",
+        "JE",
+        "GG",
+        "LU",
+        "MC",
+        "NO",
+        "NL",
+        "GB",
+        "SM",
+        "SE",
+        "CH",
+        "VA"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 27.33
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 30.15
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 33.0
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 35.85
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 38.7
+          }
+        ],
+        "kg_extra": 2.85,
+        "giorni": "5-8"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 33.16
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 37.58
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.18
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 48.57
+          }
+        ],
+        "kg_extra": 4.39,
+        "giorni": "3-5"
+      }
+    },
+    {
+      "codice": "eu2",
+      "nome": "Europa 2 (Polonia, Croazia, Finlandia, Marocco…)",
+      "paesi": [
+        "DZ",
+        "BG",
+        "CY",
+        "HR",
+        "SK",
+        "SI",
+        "EE",
+        "FI",
+        "GL",
+        "HU",
+        "IS",
+        "FO",
+        "XK",
+        "LV",
+        "LI",
+        "LT",
+        "MA",
+        "ME",
+        "PL",
+        "CZ",
+        "RO",
+        "TN"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 28.72
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 32.47
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 36.22
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 39.97
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 43.72
+          }
+        ],
+        "kg_extra": 3.75,
         "giorni": "6-10"
       },
       "express": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 35.0
+            "fino_a_kg": 0.25,
+            "prezzo": 36.05
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 45.0
+            "fino_a_kg": 0.5,
+            "prezzo": 40.86
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 75.0
+            "fino_a_kg": 1,
+            "prezzo": 48.05
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 53.96
           }
         ],
-        "kg_extra": 6.0,
-        "giorni": "3-5"
+        "kg_extra": 5.91,
+        "giorni": "4-6"
       }
     },
-    "europa": {
+    {
+      "codice": "eu3",
+      "nome": "Europa 3 (Malta, Turchia, Serbia…; Express con prezzi Europa 2)",
+      "paesi": [
+        "AL",
+        "BY",
+        "BA",
+        "MK",
+        "MT",
+        "MD",
+        "RU",
+        "RS",
+        "TR",
+        "UA"
+      ],
       "standard": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 22.0
+            "fino_a_kg": 1,
+            "prezzo": 28.61
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 32.0
+            "fino_a_kg": 2,
+            "prezzo": 39.03
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 55.0
+            "fino_a_kg": 3,
+            "prezzo": 49.45
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 59.87
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 70.29
           }
         ],
-        "kg_extra": 4.0,
+        "kg_extra": 10.42,
         "giorni": "7-12"
       },
       "express": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 40.0
+            "fino_a_kg": 0.25,
+            "prezzo": 36.05
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 52.0
+            "fino_a_kg": 0.5,
+            "prezzo": 40.86
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 85.0
+            "fino_a_kg": 1,
+            "prezzo": 48.05
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 53.96
           }
         ],
-        "kg_extra": 7.0,
-        "giorni": "3-5"
+        "kg_extra": 5.91,
+        "giorni": "4-7"
       }
     },
-    "mondo": {
+    {
+      "codice": "america",
+      "nome": "America",
+      "paesi": [
+        "US",
+        "CA",
+        "MX",
+        "BR",
+        "AR",
+        "CL",
+        "CO",
+        "PE",
+        "UY",
+        "PY",
+        "BO",
+        "EC",
+        "VE",
+        "CR",
+        "PA",
+        "GT",
+        "HN",
+        "SV",
+        "NI",
+        "DO",
+        "CU",
+        "PR",
+        "JM",
+        "BS",
+        "BB",
+        "TT",
+        "AW",
+        "CW",
+        "BM",
+        "KY"
+      ],
       "standard": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 30.0
+            "fino_a_kg": 1,
+            "prezzo": 37.96
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 45.0
+            "fino_a_kg": 2,
+            "prezzo": 47.79
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 80.0
+            "fino_a_kg": 3,
+            "prezzo": 57.63
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 67.47
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 77.31
           }
         ],
-        "kg_extra": 6.0,
+        "kg_extra": 9.84,
+        "giorni": "8-15"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 45.99
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 52.53
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 65.71
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 77.04
+          }
+        ],
+        "kg_extra": 11.33,
+        "giorni": "4-7"
+      }
+    },
+    {
+      "codice": "asia",
+      "nome": "Asia e Medio Oriente",
+      "paesi": [
+        "JP",
+        "KR",
+        "CN",
+        "HK",
+        "TW",
+        "SG",
+        "MY",
+        "TH",
+        "VN",
+        "PH",
+        "ID",
+        "IN",
+        "AE",
+        "SA",
+        "QA",
+        "KW",
+        "BH",
+        "OM",
+        "IL",
+        "JO",
+        "LB",
+        "GE",
+        "AM",
+        "AZ",
+        "KZ"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.91
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 55.67
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 66.43
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 77.19
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 87.95
+          }
+        ],
+        "kg_extra": 10.76,
+        "giorni": "8-15"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 51.96
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 59.38
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 74.26
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 86.47
+          }
+        ],
+        "kg_extra": 12.21,
+        "giorni": "4-8"
+      }
+    },
+    {
+      "codice": "oceania",
+      "nome": "Australia e Nuova Zelanda",
+      "paesi": [
+        "AU",
+        "NZ",
+        "UZ"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 44.91
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 60.82
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 76.73
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 92.64
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 108.55
+          }
+        ],
+        "kg_extra": 15.91,
         "giorni": "10-20"
       },
       "express": {
         "tariffe": [
           {
-            "fino_a_kg": 1.0,
-            "prezzo": 55.0
+            "fino_a_kg": 0.25,
+            "prezzo": 51.96
           },
           {
-            "fino_a_kg": 3.0,
-            "prezzo": 75.0
+            "fino_a_kg": 0.5,
+            "prezzo": 59.38
           },
           {
-            "fino_a_kg": 10.0,
-            "prezzo": 120.0
+            "fino_a_kg": 1,
+            "prezzo": 74.26
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 86.47
           }
         ],
-        "kg_extra": 10.0,
-        "giorni": "4-7"
+        "kg_extra": 12.21,
+        "giorni": "5-9"
+      }
+    },
+    {
+      "codice": "africa",
+      "nome": "Africa",
+      "paesi": [
+        "ZA",
+        "EG",
+        "KE",
+        "NG",
+        "GH",
+        "SN",
+        "CV",
+        "CI",
+        "TZ",
+        "MZ",
+        "AO",
+        "NA",
+        "BW",
+        "MU",
+        "SC",
+        "MG",
+        "ET",
+        "UG",
+        "CM"
+      ],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 49.08
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 56.29
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 63.5
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 70.71
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 77.92
+          }
+        ],
+        "kg_extra": 7.21,
+        "giorni": "10-20"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 53.46
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 61.13
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 76.43
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 88.74
+          }
+        ],
+        "kg_extra": 12.31,
+        "giorni": "5-9"
+      }
+    },
+    {
+      "codice": "mondo",
+      "nome": "Altri paesi (riserva: prezzi più alti)",
+      "paesi": [],
+      "standard": {
+        "tariffe": [
+          {
+            "fino_a_kg": 1,
+            "prezzo": 49.08
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 60.82
+          },
+          {
+            "fino_a_kg": 3,
+            "prezzo": 76.73
+          },
+          {
+            "fino_a_kg": 4,
+            "prezzo": 92.64
+          },
+          {
+            "fino_a_kg": 5,
+            "prezzo": 108.55
+          }
+        ],
+        "kg_extra": 15.91,
+        "giorni": "10-20"
+      },
+      "express": {
+        "tariffe": [
+          {
+            "fino_a_kg": 0.25,
+            "prezzo": 53.46
+          },
+          {
+            "fino_a_kg": 0.5,
+            "prezzo": 61.13
+          },
+          {
+            "fino_a_kg": 1,
+            "prezzo": 76.43
+          },
+          {
+            "fino_a_kg": 2,
+            "prezzo": 88.74
+          }
+        ],
+        "kg_extra": 12.31,
+        "giorni": "5-9"
       }
     }
-  }
+  ]
 }

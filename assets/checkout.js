@@ -8,9 +8,11 @@
 
 /* ----- Spedizione -----
    Le tariffe si cambiano dal pannello /admin (file dati/spedizioni.json).
-   Ogni zona ha due servizi; ogni tariffa vale fino a un peso massimo (kg);
-   oltre l'ultima fascia si aggiunge "kg_extra" € per ogni kg in più. */
-let SPEDIZIONE = { imballoKg: 0.5, gratisDa: 0, zone: {} };
+   Le zone seguono quelle di Correos: ogni zona ha l'elenco dei paesi (codici ISO)
+   e due servizi; ogni tariffa vale fino a un peso massimo (kg);
+   oltre l'ultima fascia si aggiunge "kg_extra" € per ogni kg in più.
+   Zone speciali: "canarie" e "spagna" (Spagna si divide col CAP), "mondo" = paesi non elencati. */
+let SPEDIZIONE = { imballoKg: 0.5, gratisDa: 0, zone: {}, zonaPaese: {} };
 const CARICA_SPEDIZIONI = fetch(BASE + "dati/spedizioni.json", { cache: "no-cache" })
   .then((r) => r.json())
   .then((d) => {
@@ -19,9 +21,12 @@ const CARICA_SPEDIZIONI = fetch(BASE + "dati/spedizioni.json", { cache: "no-cach
       kgExtra: Number(s.kg_extra) || 0,
       giorni: s.giorni || "",
     });
-    const zone = {};
-    for (const [nome, z] of Object.entries(d.zone || {})) zone[nome] = { standard: servizio(z.standard), express: servizio(z.express) };
-    SPEDIZIONE = { imballoKg: Number(d.imballo_kg) || 0, gratisDa: Number(d.gratis_da) || 0, zone };
+    const zone = {}, zonaPaese = {};
+    for (const z of d.zone || []) {
+      zone[z.codice] = { standard: servizio(z.standard), express: servizio(z.express) };
+      for (const p of z.paesi || []) zonaPaese[String(p).trim().toUpperCase()] = z.codice;
+    }
+    SPEDIZIONE = { imballoKg: Number(d.imballo_kg) || 0, gratisDa: Number(d.gratis_da) || 0, zone, zonaPaese };
   })
   .catch(() => {});
 
@@ -43,8 +48,6 @@ const TASSE = {
   },
 };
 
-const PAESI_EUROPA = ["GB", "CH", "NO", "IS", "LI", "AD", "MC", "SM"];
-const PAESI_MONDO = ["US", "CA", "MX", "BR", "AR", "CL", "AU", "NZ", "JP", "KR", "SG", "AE", "IL", "ZA", "MA", "TR"];
 
 const T_CO = {
   en: {
@@ -98,9 +101,7 @@ function zonaDi(paese, cap) {
     if (pr === "35" || pr === "38") return "canarie";
     return "spagna";
   }
-  if (TASSE.ivaUE[paese]) return "ue";
-  if (PAESI_EUROPA.includes(paese)) return "europa";
-  return "mondo";
+  return SPEDIZIONE.zonaPaese[paese] || "mondo";
 }
 
 function prezzoSpedizione({ tariffe, kgExtra }, kg) {
@@ -177,7 +178,7 @@ function avviaCheckout(form) {
   }
   const select = form.elements.paese;
   const nomi = new Intl.DisplayNames([LINGUA], { type: "region" });
-  const codici = [...Object.keys(TASSE.ivaUE), ...PAESI_EUROPA, ...PAESI_MONDO];
+  const codici = [...new Set([...Object.keys(TASSE.ivaUE), ...Object.keys(SPEDIZIONE.zonaPaese)])].filter((c) => nomi.of(c) && nomi.of(c) !== c);
   select.innerHTML = `<option value="">${T_CO.scegliPaese}</option>` + codici
     .map((c) => [c, nomi.of(c)]).sort((a, b) => a[1].localeCompare(b[1], LINGUA))
     .map(([c, n]) => `<option value="${c}">${n}</option>`).join("");

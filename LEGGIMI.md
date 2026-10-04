@@ -25,8 +25,8 @@ Avvio: da questa cartella `python -m http.server 8080`, poi vai su http://localh
 
 ## Carrello e checkout
 - Pagine: `cart.html` / `checkout.html` (EN), `es/carrito.html` / `es/pago.html`, `it/carrello.html` / `it/checkout.html`
-- Tariffe di spedizione: pannello → Impostazioni → Tariffe di spedizione (file `dati/spedizioni.json`), cifre PROVVISORIE. Regole delle tasse in cima a `assets/checkout.js`.
-- Zone: Canarie (CAP 35xxx/38xxx), Spagna peninsulare e Baleari, UE, Europa extra UE, resto del mondo.
+- Tariffe di spedizione: pannello → Impostazioni → Tariffe di spedizione (file `dati/spedizioni.json`). Sono quelle del listino Correos 2026 Canarie (Paq Estándar / Paq Premium, nazionale e internazionale), con le zone di Correos. Regole delle tasse in cima a `assets/checkout.js`.
+- Zone Correos: Canarie (CAP 35/38), Spagna peninsulare e Baleari, Portogallo, Europa 1-2-3, America, Asia, Oceania, Africa, più "mondo" per i paesi non elencati.
 - Tasse: nessuna IGIC (esente come autonomo; si riattiva in `TASSE.igic`); IVA del paese UE incassata al checkout fino a 150 € di merce (IOSS); sopra i 150 € e fuori UE le paga il cliente alla consegna. Da far confermare al gestor.
 - Il peso di ogni opera (kg, imballata) si imposta nel pannello di gestione.
 - Il pagamento non è ancora collegato (prossimo passo: Stripe).

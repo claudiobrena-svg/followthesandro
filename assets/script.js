@@ -95,7 +95,7 @@ function illustrazione(p) {
   </svg>`;
 }
 
-const euro = (n) => n.toLocaleString(LOCALE, { style: "currency", currency: "EUR", minimumFractionDigits: 0, maximumFractionDigits: 2 });
+const euro = (n) => n.toLocaleString(LOCALE, { style: "currency", currency: "EUR", minimumFractionDigits: n % 1 ? 2 : 0, maximumFractionDigits: 2 });
 
 function schedaProdotto(p) {
   return `<article class="prodotto">
