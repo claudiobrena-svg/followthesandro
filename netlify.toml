@@ -1,0 +1,4 @@
+# Pubblicazione su Netlify: sito statico, nessuna compilazione
+[build]
+  publish = "."
+  command = ""
