@@ -2,3 +2,9 @@
 [build]
   publish = "."
   command = ""
+
+# Finché il sito è in prova: chiede a Google di non indicizzarlo. Togliere al lancio.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
