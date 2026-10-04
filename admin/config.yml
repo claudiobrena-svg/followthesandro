@@ -1,9 +1,14 @@
 # Pannello di gestione delle opere (Decap CMS)
 # In locale salva direttamente nei file grazie a "decap-server".
-# Online: va collegato all'hosting (es. Netlify + GitHub) cambiando "backend".
+# Online: login con l'account GitHub (autorizzazione gestita da Netlify).
 backend:
-  name: git-gateway
+  name: github
+  repo: claudiobrena-svg/followthesandro
   branch: main
+  commit_messages:
+    update: "Pannello: aggiornate le {{collection}}"
+    uploadMedia: "Pannello: caricata la foto {{path}}"
+    deleteMedia: "Pannello: eliminata la foto {{path}}"
 local_backend: true
 
 locale: it
