@@ -2,7 +2,7 @@
   "prodotti": [
     {
       "nuovo": true,
-      "foto": "",
+      "foto": "/assets/prodotti/whatsapp-image-2026-10-04-at-15.16.24.jpeg",
       "popolare": true,
       "segnaposto": {
         "forma": "van",
@@ -10,13 +10,13 @@
         "legno": "#c9a27a"
       },
       "venduto": false,
-      "prezzo": 290,
-      "peso": 3.5,
+      "prezzo": 120,
+      "peso": 2.9,
       "cat": "quadri",
       "nome": {
-        "en": "\"Follow the Sandro\" Van",
-        "es": "Furgoneta \"Follow the Sandro\"",
-        "it": "Van \"Follow the Sandro\""
+        "en": "Anchor",
+        "es": "Ancora",
+        "it": "Ancora"
       },
       "id": 1
     },
