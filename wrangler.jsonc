@@ -1,0 +1,15 @@
+// Configurazione del sito su Cloudflare (Workers con static assets)
+// Comando di build su Cloudflare:  python3 strumenti/genera_pagine.py && python3 strumenti/prepara_cloudflare.py
+// Comando di deploy:               npx wrangler deploy
+{
+  "name": "followthesandro",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./pubblico",
+    "binding": "ASSETS",
+    // il Worker interviene solo per il login del pannello; tutto il resto è servito come file statico
+    "run_worker_first": ["/api/*"]
+  },
+  "observability": { "enabled": true }
+}

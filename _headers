@@ -1,0 +1,4 @@
+# Intestazioni per Cloudflare
+# Finché il sito è in prova: chiede a Google di non indicizzarlo. Togliere al lancio.
+/*
+  X-Robots-Tag: noindex

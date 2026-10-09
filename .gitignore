@@ -7,3 +7,7 @@ Thumbs.db
 /*.html
 /es/
 /it/
+
+# Cartelle generate per Cloudflare
+/pubblico/
+.wrangler/

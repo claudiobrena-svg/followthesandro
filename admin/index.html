@@ -9,6 +9,15 @@
 </head>
 <body>
 <!-- Pannello di gestione (Decap CMS). Le impostazioni sono in config.yml -->
+<script>window.CMS_MANUAL_INIT = true;</script>
 <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+<script>
+  // Il login GitHub passa da Netlify sul sito Netlify, e dal nostro Worker (/api/auth) su Cloudflare.
+  var suNetlify = /netlify\.app$/.test(location.hostname);
+  var inLocale = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  CMS.init(suNetlify || inLocale ? {} : {
+    config: { backend: { name: "github", repo: "claudiobrena-svg/followthesandro", branch: "main", base_url: location.origin, auth_endpoint: "api/auth" } }
+  });
+</script>
 </body>
 </html>
